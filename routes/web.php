@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome', [
@@ -22,3 +23,6 @@ Route::get('/hello/{nama}', function ($nama) {
         'nama' => $nama
     ]);
 });
+
+// Route CRUD Blog
+Route::resource('posts', PostController::class);
